@@ -1,0 +1,23 @@
+footer {
+  margin-top: 100px;
+  background: #38373B;
+  height: 250px;
+  display: flex;
+  align-items: center;
+}
+
+.navigation {
+  width: 100%;
+}
+
+.navigationList {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+}
+
+.navigationElement {
+  font-family: "Roboto Mono", serif;
+}

@@ -1,0 +1,23 @@
+@font-face{
+    font-family: Tarek;
+    src: url("fonts/Ts-Tarek.ttf") format("opentype");
+}
+
+.content {
+    width: 100%;
+    margin-top: 150px;
+    display: flex;
+    justify-content: center;
+}
+
+
+.titleDiv {
+    display: flex;
+    justify-content: center;
+}
+
+.title {
+    font-family: Tarek, serif;
+    font-size: 4rem;
+    color: #38373B;
+}

@@ -1,0 +1,53 @@
+header {
+  background: #38373B;
+}
+
+.content{
+  padding-top: 50px;
+  width: 100%;
+  max-width: 1440px;
+  margin: auto;
+  height: auto;
+}
+
+.backgroundLogoDiv{
+  top:100px;
+  width: 100%;
+  position: relative;
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.backgroundLogoText {
+  font-family: Adriana, serif;
+  font-size: 15rem;
+  color: #313132;
+}
+
+.blocks{
+ position: relative;
+  bottom: 240px;
+  text-align: center;
+}
+
+.firstBlock p{
+  line-height: 7.6rem;
+  color: #fff;
+  font-family: "Roboto Mono", serif;
+  font-weight: 400;
+  font-size: 5.5rem;
+  margin-bottom:50px;
+
+}
+
+.secondBlock {
+  width: 100%;
+  p{
+
+    font-size: 4.5rem;
+    color: #fff;
+    font-family: "Roboto Mono", serif;
+    font-weight: 100;
+  }
+}

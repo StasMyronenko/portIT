@@ -1,0 +1,67 @@
+@font-face {
+  font-family: "Adriana";
+  src: url("../../fonts/Adriana-Regular.ttf") format("opentype");
+}
+
+ul {
+  list-style: none;
+}
+a{
+  text-decoration: none;
+  color: #fff
+}
+
+.content {
+  z-index:10;
+  padding-top: 40px;
+  padding-bottom: 30px;
+  display: flex;
+  background: #38373B;
+  width: 100%;
+  justify-content: center;
+  position: fixed;
+  top:0;
+
+}
+.menu {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1440px;
+}
+/* Logo */
+
+.divLogo {
+
+}
+
+.logo {
+  font-size: 3rem;
+  font-family: Adriana, serif;
+}
+
+/* navigation */
+.navigation{
+  width: 36%;
+}
+
+.navigationList {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navigationElement, .authElement {
+  font-family: "Roboto Mono", serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+/*auth*/
+.auth {
+  width: 18%;
+}
+
+.authList{
+  justify-content: space-between;
+  display: flex;
+}
