@@ -1,10 +1,13 @@
 from fastapi.security import OAuth2PasswordBearer
+from sqlalchemy_media import StoreManager
 from starlette.requests import Request
 
 from sqladmin import ModelView
+from wtforms import StringField, Form, TextAreaField, URLField, FileField
 
+from configuration.db import SessionLocal
 from configuration.utils import get_current_user
-from projects.models import Project
+from projects.models import Project, ProjectImage
 from users.models import User
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
@@ -56,8 +59,23 @@ class ForOwner(ModelView):
         return self.is_accessible(request)
 
 
+class ImageField(StringField):
+    def process_formdata(self, list_value):
+        if len(list_value) > 0:
+            with StoreManager(SessionLocal):
+                self.data = ProjectImage.create_from(list_value[0])
+
+
+class ProjectForm(Form):
+    title = StringField('title')
+    description = TextAreaField('description')
+    url = URLField('url')
+    photo_url = ImageField('Photo Url')
+
+
 class ProjectView(ForAdmin, model=Project):
     column_list = [Project.id, Project.title]
+    form = ProjectForm
 
 
 class UserView(ForOwner, model=User):

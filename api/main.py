@@ -10,9 +10,7 @@ import admin as admin_models
 from users.models import User
 from site_data.site_data_app import app as site_app
 
-from dotenv import load_dotenv
 
-# TODO make something with admin panel - it don't work on frontend(in postman it works, so problem in front)
 app = FastAPI()
 
 admin = Admin(app, engine, base_url="/admin")

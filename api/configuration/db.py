@@ -4,6 +4,10 @@ from sqlalchemy.orm import sessionmaker
 import os
 import pymongo
 from dotenv import load_dotenv
+
+import functools
+from sqlalchemy_media import StoreManager, FileSystemStore
+
 load_dotenv()
 # ##  SQL  ## #
 SQLALCHEMY_DATABASE_URL = os.getenv('SQLALCHEMY_DATABASE_URL')
@@ -16,6 +20,13 @@ SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 Base = declarative_base()
 
+# For files (projects model)
+
+StoreManager.register(
+    'fs',
+    functools.partial(FileSystemStore, os.getenv('MEDIA_PATH'), os.getenv('MEDIA_PATH')),
+    default=True
+)
 
 # ##  NoSQL  ## #
 # client = pymongo.MongoClient("mongodb://admin:admin@127.0.0.1:27017/")
